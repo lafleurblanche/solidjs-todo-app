@@ -8,7 +8,7 @@ import { TextField } from "@kobalte/core/text-field";
 import { Checkbox } from "@kobalte/core/checkbox";
 import { Todo } from './types';
 
-const StyledInput = styled(TextField )`
+const StyledTextField = styled(TextField)`
   padding: 8px;
   font-size: 16px;
   border: 1px solid #ccc;
@@ -68,12 +68,10 @@ function App() {
     <div class="todo-app">
       <h1>Todo App</h1>
       <div class="input-area">
-        <StyledInput
-          type="text"
-          value={newTodo()}
-          onInput={(e: any) => setNewTodo(e.currentTarget.value)}
-          placeholder="新しいTodoを入力"
-        />
+        <StyledTextField value={newTodo()} onChange={setNewTodo}>
+				  <TextField.Label>Todoを入力</TextField.Label>
+				  <TextField.Input />
+			  </StyledTextField>
         <StyledButton onClick={addTodo}>追加</StyledButton>
       </div>
       <ul class="todo-list">
