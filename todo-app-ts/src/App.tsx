@@ -69,8 +69,8 @@ function App() {
       <h1>Todo App</h1>
       <div class="input-area">
         <StyledTextField value={newTodo()} onChange={setNewTodo}>
-				  <TextField.Label>Todoを入力</TextField.Label>
-				  <TextField.Input />
+			    <TextField.Label>Todoを入力</TextField.Label>
+			    <TextField.Input />
 			  </StyledTextField>
         <StyledButton onClick={addTodo}>追加</StyledButton>
       </div>
